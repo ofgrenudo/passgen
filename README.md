@@ -5,6 +5,7 @@ passgen is a random password generator for your terminal. It is intended to be a
 ## Example Syntax
 
 ```text
+
 NAME
         PassGen - Create relatively random and unique passwords.
 
@@ -24,6 +25,10 @@ DESCRIPTION
         -s, --short
                 Generates a password that will contain no words, only alpha numerical characters,
                 including symbols.
+
+        --no-symbols
+                Generates a password that will only contain alpha numerical characters,
+                excluding symbols.
 
 
 AUTHOR
