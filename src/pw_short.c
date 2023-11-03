@@ -30,7 +30,7 @@
 char* generate_short() {
     char dictionary[67] = "abcdefghijklmnopqrstuvwxyz1234567890~!@#$%%^&*()_+[];\',./\\{}|:\"<>\?";
     int dictionary_length = strlen(dictionary);
-    const int password_length = 15;
+    const int password_length = 13;
     char* generated_password = malloc (sizeof(char) * password_length);
 
     int i = 0;
@@ -50,7 +50,7 @@ char* generate_short() {
 char* generate_short_no_symb() {
     char dictionary[36] = "abcdefghijklmnopqrstuvwxyz123456789";
     int dictionary_length = strlen(dictionary);
-    const int password_length = 15;
+    const int password_length = 14;
     char* generated_password = malloc (sizeof(char) * password_length);
 
     int i = 0;

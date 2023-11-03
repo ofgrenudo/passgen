@@ -45,3 +45,12 @@ COPYRIGHT
         and you are welcome to redistribute it under the terms and conditions
         listed in the gpl-3.0 license file;
 ```
+
+## Installation
+
+1. Download the latest installer from https://github.com/ofgrenudo/passgen/releases/
+2. Place the installer into the folder C:\Program Files\passgen\
+3. Include C:\Program Files\passgen in your environment path vairables.
+4. Run the program.
+
+Alternatively you can git clone the latest dependency somewhere on your computer and use it locally, or include it in your environmnet path like above.

@@ -24,3 +24,8 @@ clean:
 	@cd $(build_dir) && rm -f *.exe
 	$(info	Cleaning .\build of all .o)
 	@cd $(build_dir) && rm -f *.o
+
+test:
+	$(info Building pw_short_test)
+	cc src/pw_short_test.c src/pw_short.c -o build/pw_short_test.exe
+	./build/pw_short_test.exe
