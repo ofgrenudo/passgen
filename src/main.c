@@ -7,7 +7,7 @@
 int main(int argc, char* argv[]) {
     setlocale(LC_CTYPE, "en_US.UTF-8");
     char author[100] = "Joshua D. Winters-Brown";
-    char version[100] = "0.1.2";
+    char version[100] = "0.1.3";
 
     char *menu = 
     "\vNAME\n"
