@@ -30,6 +30,7 @@ int main(int argc, char* argv[]) {
     "\vAUTHOR\n"
     "\tWritten by Joshua D. Winters-Brown.\n\n"
     "\vREPORTING BUGS\n"
+    "\tTo report bugs, please visit the github issues link below\n\t\t> https://github.com/ofgrenudo/passgen/issues"
     "\vCOPYRIGHT\n"
     "\tpassgen  Copyright (C) 2023  Joshua D. Winters-Brown.\n\n\tThis program comes with ABSOLUTELY NO WARRANTY; This is free software,\n\tand you are welcome to redistribute it under the terms and conditions\n\tlisted in the gpl-3.0 license file;";
     
