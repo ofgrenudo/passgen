@@ -27,7 +27,24 @@
  * @return your password as a char*[].
 */
 char* generate_short() {
-    char dictionary[67] = "abcdefghijklmnopqrstuvwxyz1234567890~!@#$%%^&*()_+[];\',./\\{}|:\"<>\?\0";
+    char dictionary[66] = "abcdefghijklmnopqrstuvwxyz1234567890~!@#$%%^&*()_+[];\',./\\{}|:\"<>\?";
+    int dictionary_length = strlen(dictionary);
+    const int password_length = 15;
+    char* generated_password = malloc (sizeof(char) * password_length);
+
+    int i = 0;
+    srand(time(NULL));
+    while(i < password_length) {
+        int random_charater_selector = rand() % dictionary_length;
+        generated_password[i] = dictionary[random_charater_selector];
+        i++;
+    }
+
+    return generated_password;
+}
+
+char* generate_short_no_symb() {
+    char dictionary[36] = "abcdefghijklmnopqrstuvwxyz1234567890";
     int dictionary_length = strlen(dictionary);
     const int password_length = 15;
     char* generated_password = malloc (sizeof(char) * password_length);

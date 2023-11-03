@@ -1,6 +1,6 @@
-# Pass Gen
+# PassGen
 
-pwplease is a random password generator for your terminal. It is intended to be a tool that you can run from the command line that will spit out a password to the default configuration settings, or your custom settings.
+passgen is a random password generator for your terminal. It is intended to be a tool that you can run from the command line that will spit out a password to the default configuration settings, or your custom settings.
 
 ## Example Syntax
 
