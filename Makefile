@@ -1,7 +1,7 @@
 .PHONY: build clean
 
 author = Joshua D. Winters-Brown
-version = 0.1.1
+version = 0.1.2
 program_name = passgen
 build_dir = ./build/
 object_files = src/main.c src/pw_short.c

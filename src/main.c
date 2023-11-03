@@ -1,18 +1,13 @@
 #include <stdio.h>  
 #include <getopt.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "pw_short.h"
 
 int main(int argc, char* argv[]) {
-    int opt;
-    static int flag_s = 0;
-    static int flag_l = 0;
-    static int flag_h = 0;
-    static int flag_a = 0;
-    static int flag_v = 0;
-
+    setlocale(LC_CTYPE, "en_US.UTF-8");
     char author[100] = "Joshua D. Winters-Brown";
-    char version[100] = "0.1.1";
+    char version[100] = "0.1.2";
 
     char *menu = 
     "\vNAME\n"
@@ -25,6 +20,8 @@ int main(int argc, char* argv[]) {
     "\t\tDisplay this message (the help message :)\n\n"
     "\t-s, --short\n"
     "\t\tGenerates a password that will contain no words, only alpha numerical characters,\n\t\tincluding symbols.\n\n"
+    "\t--no-symbols\n"
+    "\t\tGenerates a password that will only contain alpha numerical characters,\n\t\texcluding symbols.\n\n"
     // "\t-l, --long\n"
     // "\t\tGenerates a password that will contain a collection of words. These\n\t\tpasswords will only contain alpha numerical characters, excluding symbols.\n\n"
     "\vAUTHOR\n"
@@ -33,16 +30,24 @@ int main(int argc, char* argv[]) {
     "\tTo report bugs, please visit the github issues link below\n\t\t> https://github.com/ofgrenudo/passgen/issues"
     "\vCOPYRIGHT\n"
     "\tpassgen  Copyright (C) 2023  Joshua D. Winters-Brown.\n\n\tThis program comes with ABSOLUTELY NO WARRANTY; This is free software,\n\tand you are welcome to redistribute it under the terms and conditions\n\tlisted in the gpl-3.0 license file;";
-    
+
+    int opt;
+    static int flag_s = 0; //short
+    static int flag_y = 0; //no-symbols
+    static int flag_l = 0; //long
+    static int flag_h = 0; //help
+    static int flag_a = 0; //author
+    static int flag_v = 0; //version
 
     int long_index = 0;
     static struct option long_options[] = {
         /* These options set a flag. */
-        {"short",   no_argument,       &flag_s, 1},
-        {"long",    no_argument,       &flag_l, 1},
-        {"help",    no_argument,       &flag_h, 1},
-        {"author",  no_argument,       &flag_a, 1},
-        {"version", no_argument,       &flag_v, 1},
+        {"short",       no_argument,       &flag_s, 1},
+        {"no-symbols",  no_argument,       &flag_y, 1},
+        {"long",        no_argument,       &flag_l, 1},
+        {"help",        no_argument,       &flag_h, 1},
+        {"author",      no_argument,       &flag_a, 1},
+        {"version",     no_argument,       &flag_v, 1},
     };
     
     while((opt = getopt_long(argc, argv, ":slhav", long_options, &long_index)) != -1) {
@@ -68,6 +73,7 @@ int main(int argc, char* argv[]) {
     // Help must be the leader of the logic block because if someone puts -h or --help we 
     // want it to stop the rest of the command and brick their session by displaying the help message.
     if (flag_h) { printf("%s", menu); }
+    else if (flag_y) { char* pw = generate_short_no_symb(); printf("%s", pw); free(pw); }
     else if (flag_s) { char* pw = generate_short(); printf("%s", pw); free(pw);}
     else if (flag_l) { printf("This feature has not been implemented yet.\n");}
     else if (flag_a) { printf("%s", author); }
