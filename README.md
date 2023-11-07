@@ -4,9 +4,14 @@
 
 ## Installation
 
-TODO!
+1. Download the latest installer from https://github.com/ofgrenudo/passgen/releases/
+2. Place the installer into the folder C:\Program Files\passgen\
+3. Include C:\Program Files\passgen in your environment path vairables.
+4. Run the program.
 
-## Example Syntax
+Alternatively you can git clone the latest dependency somewhere on your computer and use it locally, or include it in your environmnet path like above.
+
+## Application Syntax
 
 ```text
 
@@ -50,11 +55,23 @@ COPYRIGHT
         listed in the gpl-3.0 license file;
 ```
 
-## Installation
+## Development Setup
 
-1. Download the latest installer from https://github.com/ofgrenudo/passgen/releases/
-2. Place the installer into the folder C:\Program Files\passgen\
-3. Include C:\Program Files\passgen in your environment path vairables.
-4. Run the program.
+1. Clone this repo
+2. Install make, clang
 
-Alternatively you can git clone the latest dependency somewhere on your computer and use it locally, or include it in your environmnet path like above.
+## Meta
+
+Joshua D. Winters-Brown
+
+Distributed under the GNU General Public License v3.0. See `LICENSE.md` for more information.
+
+[https://github.com/ofgrenudo](https://github.com/ofgrenudo)
+
+## Contributing
+
+1. Fork it ([https://github.com/ofgrenudo/passgen/fork](https://github.com/ofgrenudo/passgen/fork)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am "Added foobar"`)
+4. Push to branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request. 
